@@ -1,5 +1,5 @@
 var assert = require("chai").assert;
-var isValidLuhn = require("../");
+var isValidLuhn = require("../luhn");
 
 // Before you begin, write a test (or multiple) for
 // the function (using mocha and chai). If you find you need
@@ -8,7 +8,14 @@ var isValidLuhn = require("../");
 
 describe("Cecking ", function() {
   it("should return true if number is valid according to the Luhn Algo", function() {
-    var number = 0364855411;
+    var number = 1234567897;
     assert.isTrue(isValidLuhn(number));
+  });
+});
+
+describe("Cecking ", function() {
+  it("should return false if number is not valid according to the Luhn Algo", function() {
+    var number = 1111111111;
+    assert.isFalse(isValidLuhn(number));
   });
 });
